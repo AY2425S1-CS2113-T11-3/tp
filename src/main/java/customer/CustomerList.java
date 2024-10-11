@@ -15,6 +15,8 @@ public class CustomerList {
         customers.add(customer);
     }
 
-
+    public static ArrayList<Customer> getCustomers() {
+        return customers;
+    }
 }
 
