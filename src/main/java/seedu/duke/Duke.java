@@ -7,11 +7,14 @@ public class Duke {
      * Main entry-point for the java.duke.Duke application.
      */
     public static void main(String[] args) {
-        String logo = " ____        _        \n"
-                + "|  _ \\ _   _| | _____ \n"
-                + "| | | | | | | |/ / _ \\\n"
-                + "| |_| | |_| |   <  __/\n"
-                + "|____/ \\__,_|_|\\_\\___|\n";
+        String logo =
+                """
+                        ____ _ _ ____            _        _
+                        / ___| (_)  _ \\ ___ _ __ | |_ __ _| |
+                        | |   | | | |_) / _ \\ '_ \\| __/ _` | |
+                        | |___| | |  _ <  __/ | | | || (_| | |
+                        \\____|_|_|_| \\_\\___|_| |_|\\__\\__,_|_|
+                        """;
         System.out.println("Hello from\n" + logo);
         System.out.println("What is your name?");
 
