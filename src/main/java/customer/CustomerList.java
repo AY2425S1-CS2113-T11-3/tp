@@ -12,11 +12,6 @@ public class CustomerList {
         System.out.println(customer.toString());
     }
 
-    public static void addCustomer(String username , int age , int contactNumber){
-        Customer customer = new Customer(username, age, contactNumber);
-        customers.add(customer);
-    }
-
     public static ArrayList<Customer> getCustomers() {
         return customers;
     }

@@ -1,10 +1,7 @@
 package parser;
 
 import customer.Customer;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
-import java.io.InputStream;
-import java.io.ByteArrayInputStream;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ParserTest {
