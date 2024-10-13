@@ -23,10 +23,10 @@ public class Parser {
     }
 
     /**
-     * Creates new customer object based on user input
+     * Creates new customer object based on user input.
      *
-     * @throws CustomerException if input is not compliant with format
-     * @throws NumberFormatException if the age and contact content are not integer string
+     * @throws CustomerException if input is not compliant with format.
+     * @throws NumberFormatException if the age and contact content are not integer string.
      */
     public static Customer parseIntoCustomer() throws CustomerException , NumberFormatException {
         userInput = userInput.substring(addCustomerCommand.length()).trim();
@@ -44,6 +44,12 @@ public class Parser {
         return new Customer(username , age, contactNumber );
     }
 
+    /**
+     * Parses the user input according to the parameters based on a fixed sequence.
+     *
+     * @param parameters Sequence to parse the input.
+     * @return content of each parameter in sequence.
+     */
     public static String[] parseParameterContents(String[] parameters){
         String[] contents = new String[parameters.length];
         for(int i = 0; i < parameters.length - 1; i++){
@@ -59,6 +65,11 @@ public class Parser {
         return contents;
     }
 
+    /**
+     * Checks if the parameters exist and is in sequence.
+     *
+     * @param parameters parameters which the input should have , in sequence.
+     */
     private static boolean isValidSequence(String[] parameters){
 
 

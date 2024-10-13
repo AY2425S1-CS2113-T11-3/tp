@@ -15,6 +15,9 @@ public class CustomerException extends RuntimeException {
         System.out.println(getMessage());
     }
 
+    /**
+     * Exception for the add-user command
+     */
     public static CustomerException addCustomerException(){
         return new CustomerException("Unable to add customer. Please follow : " + ADD_FORMAT);
     }
