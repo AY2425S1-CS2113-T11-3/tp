@@ -1,5 +1,8 @@
 package exceptions;
 
+/**
+ * Customer related exceptions
+ */
 public class CustomerException extends RuntimeException {
 
     public static final String ADD_FORMAT = "add-user /u [USERNAME] /a [AGE] /c [CONTACT_NUMBER]";

@@ -8,6 +8,8 @@ public class CustomerList {
 
     public static void addCustomer(Customer customer){
         customers.add(customer);
+        System.out.println("Customer added");
+        System.out.println(customer.toString());
     }
 
     public static void addCustomer(String username , int age , int contactNumber){

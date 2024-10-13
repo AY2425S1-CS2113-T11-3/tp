@@ -2,7 +2,8 @@ package seedu.duke;
 
 import customer.Customer;
 import customer.CustomerList;
-
+import exceptions.CustomerException;
+import parser.Parser;
 import java.util.Scanner;
 
 public class Duke {
@@ -12,10 +13,28 @@ public class Duke {
     public static void main(String[] args) {
         printGreetings();
         getName();
-        Customer customer1 = new Customer("John" , 18 , 98414916);
-        Customer customer2 = new Customer("Mary" , 20 , 98411416);
-        CustomerList.addCustomer(customer1);
-        CustomerList.addCustomer(customer2);
+        String action = Parser.getAction();
+
+        try {
+            switch (action) {
+            case "add-user":
+                Customer customer = Parser.parseIntoCustomer();
+                CustomerList.addCustomer(customer);
+                break;
+            case "extra":
+                System.out.println("extra case for switch");
+                break;
+            default:
+                System.out.println("Invalid Command");
+                break;
+            }
+        }catch(CustomerException exception){
+            exception.printErrorMessage();
+
+        }catch(NumberFormatException exception){
+            System.out.println("Unable to parse customer");
+        }
+
     }
 
     public static void getName(){

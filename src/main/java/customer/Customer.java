@@ -1,5 +1,8 @@
 package customer;
 
+/**
+ * Represents customers of CliRental
+ */
 public class Customer {
 
     private String username;
@@ -36,4 +39,9 @@ public class Customer {
         this.contactNumber = contactNumber;
     }
 
+    public String toString(){
+        return "Username : " + this.getUsername() + "\n"
+                + "Age : " + this.getAge() + "\n"
+                + "Contact Number : " + this.getContactNumber();
+    }
 }
