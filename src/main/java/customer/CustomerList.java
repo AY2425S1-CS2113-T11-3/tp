@@ -27,9 +27,12 @@ public class CustomerList {
     }
 
     public static void printCustomers() {
+        System.out.println("_".repeat(60));
+        System.out.println("Here are our customers: ");
+        System.out.println();
         for (Customer customer : customers) {
             System.out.println(customer.toString());
-            System.out.println("____________________________________________________________");
+            System.out.println("_".repeat(60));
         }
     }
 }
