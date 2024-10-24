@@ -1,6 +1,7 @@
 package parser;
 
-import transcation.Transaction;
+import transaction.Transaction;
+
 import java.time.LocalDate;
 
 public class TransactionParser {
@@ -23,7 +24,7 @@ public class TransactionParser {
         int duration = Integer.parseInt(parameterContents[2]);
         LocalDate startDate = LocalDate.parse(parameterContents[3]);
 
-        return new Transaction(carLicensePlate, userName, String.valueOf(duration),
+        return new Transaction(carLicensePlate.toUpperCase(), userName, String.valueOf(duration),
                 startDate.toString());
     }
 

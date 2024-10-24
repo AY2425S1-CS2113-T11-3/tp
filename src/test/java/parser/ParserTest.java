@@ -13,23 +13,20 @@ public class ParserTest {
     public void parse_validUserInput_commandActionExecuted() throws CliRentalException {
         String userInput = "add-user /u user1234 /a 18 /c 92750174";
         CustomerList.getCustomers().clear();
-        Parser.parse(userInput);
 
+        assertEquals(false, Parser.parse(userInput));
         assertEquals(1, CustomerList.getCustomers().size());
         assertEquals("user1234", CustomerList.getCustomers().get(0).getUsername());
-        assertEquals(false, Parser.parse(userInput));
 
-        String userInput1 = "add-car /n Honda Civic /c SGE1234T /p 123";
+        String userInput1 = "add-car /n Honda Civic /c SGE4966P /p 123";
         CarList.getCarsList().clear();
-        Parser.parse(userInput1);
 
+        assertEquals(false, Parser.parse(userInput1));
         assertEquals(1, CarList.getCarsList().size());
         assertEquals(123.0, CarList.getCarsList().get(0).getPrice());
-        assertEquals(false, Parser.parse(userInput1));
 
 
         String userInput2 = "exit";
-        Parser.parse(userInput2);
         assertEquals(true, Parser.parse(userInput2));
     }
 }

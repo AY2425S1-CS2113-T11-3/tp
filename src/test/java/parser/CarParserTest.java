@@ -31,11 +31,11 @@ public class CarParserTest {
 
     @Test
     public void parseIntoCar_validUserInput_carObjectCreated() {
-        String userInput = "add-car /n civic /c 12345 /p 150";
+        String userInput = "add-car /n civic /c SGT1234X /p 150";
 
         Car car = CarParser.parseIntoCar(userInput);
         assertEquals("civic", car.getModel());
-        assertEquals("12345", car.getLicensePlateNumber());
+        assertEquals("SGT1234X", car.getLicensePlateNumber());
         assertEquals(150, car.getPrice());
     }
 
@@ -70,8 +70,8 @@ public class CarParserTest {
 
     @Test
     public void parseIntoCar_boundaryPriceValue_carObjectCreated() {
-        String userInput = "add-car /n civic /c 12345 /p 0"; // Minimum price
-        String userInput1 = "add-car /n civic /c 67890 /p 99999"; // Maximum valid price
+        String userInput = "add-car /n civic /c SCT6677K /p 0"; // Minimum price
+        String userInput1 = "add-car /n civic /c SPL9773R /p 99999"; // Maximum valid price
 
         Car car = CarParser.parseIntoCar(userInput);
         assertEquals(0, car.getPrice());

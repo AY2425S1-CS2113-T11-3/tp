@@ -23,6 +23,8 @@ public class CliRental {
                     isExit = true;
                 }
 
+                Parser.printDividerLine();
+
             } catch (CustomerException exception){
                 exception.printErrorMessage();
             } catch (NumberFormatException exception){

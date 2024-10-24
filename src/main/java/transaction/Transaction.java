@@ -1,4 +1,4 @@
-package transcation;
+package transaction;
 
 public class Transaction {
     private static int transactionCounter = 1;

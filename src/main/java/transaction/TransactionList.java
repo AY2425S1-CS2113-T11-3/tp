@@ -1,4 +1,7 @@
-package transcation;
+package transaction;
+
+import car.CarList;
+import exceptions.CarException;
 
 import java.util.ArrayList;
 
@@ -31,7 +34,12 @@ public class TransactionList {
     }
 
     public static void addTx(Transaction transaction) {
+        String licensePlateNumber = transaction.getCarLicensePlate();
+        if (!CarList.isExistingLicensePlateNumber(licensePlateNumber)){
+            throw CarException.licensePlateNumberNotFound();
+        }
         transactionList.add(transaction);
+        CarList.markCarAsRented(licensePlateNumber);
         System.out.println("Transaction added: ");
         System.out.println(transaction.toString());
     }
@@ -47,7 +55,8 @@ public class TransactionList {
         System.out.println("Here are all the transactions: ");
 
         for (Transaction transaction : transactionList) {
-            System.out.println(index + ") " + transaction.getCarLicensePlate()
+            System.out.println(index + ") " + transaction.getTransactionId()
+                    + " | " + transaction.getCarLicensePlate()
                     + " | " + transaction.getBorrowerName()
                     + " | " + transaction.getDuration()
                     + " | " + transaction.getStartDate());

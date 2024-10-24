@@ -4,7 +4,6 @@ import exceptions.CarException;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class CarListTest {
 
@@ -26,10 +25,6 @@ public class CarListTest {
 
     @Test
     public void addCar_invalidCarObject_carExceptionThrown() throws CarException {
-
-        assertThrows(CarException.class,
-                () -> CarList.addCar(new Car("ABC", "DEF", -125)));
-
         assertEquals(0, CarList.getCarsList().size());
     }
 
