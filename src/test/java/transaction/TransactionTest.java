@@ -16,6 +16,7 @@ class TransactionTest {
 
     @BeforeEach
     void setUp() {
+
         // Initialize two Transaction instances before each test
         LocalDate startDate1 = LocalDate.parse("01-10-2024", dateTimeFormatter);
         LocalDate startDate2 = LocalDate.parse("02-10-2024", dateTimeFormatter);
